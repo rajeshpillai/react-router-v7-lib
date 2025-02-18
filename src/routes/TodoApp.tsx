@@ -1,13 +1,19 @@
 import "./todos.css";
-import { useLoaderData, useNavigate, useFetcher } from "react-router";
+import { useLoaderData, useNavigate, useFetcher, Link } from "react-router";
 import { useState } from "react";
 
 const API_URL = "https://jsonplaceholder.typicode.com/todos";
 
+const todos = [];
+
 export async function clientLoader() {
   console.log("TODOS: loader...");
   const response = await fetch(API_URL + "?_limit=10");
-  return response.json();
+  const todoJson = await response.json();
+  console.log("json: ", todoJson);
+  const allData = [...todos, ...todoJson];
+  console.log("all: ", allData);
+  return allData;
 }
 
 export async function todosAction({ request }) {
@@ -16,11 +22,13 @@ export async function todosAction({ request }) {
   
   if (actionType === "add") {
     const newTodo = { title: formData.get("title"), completed: false };
+    console.log("Adding todo: ", newTodo);
     const response = await fetch(API_URL, {
       method: "POST",
       body: JSON.stringify(newTodo),
       headers: { "Content-Type": "application/json" },
     });
+    todos.push(newTodo);
     return response.json();
   }
 
@@ -93,6 +101,7 @@ export default function TodoApp() {
                   <input type="hidden" name="action" value="delete" />
                   <button type="submit">Delete</button>
                 </fetcher.Form>
+                <Link to={`/todos/${todo.id}`}>View in</Link>
               </td>
             </tr>
           ))}
