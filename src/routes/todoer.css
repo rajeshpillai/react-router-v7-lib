@@ -1,0 +1,94 @@
+/* src/styles/todos.css */
+.app {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ddd;
+}
+
+.sidebar {
+  width: 250px;
+  padding: 10px;
+  background-color: #e0e0e0;
+  overflow-y: auto;
+  height: 100%;
+  position: fixed;
+}
+
+.content {
+  flex-grow: 1;
+  margin-left: 260px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+button {
+  margin: 5px;
+  padding: 5px 10px;
+}
+
+.dashboard {
+  padding: 20px;
+}
+
+.todo-details {
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+button.add-todo {
+  font-size: 24px;
+}
+
+/* src/styles/todos.css */
+.sidebar {
+  width: 250px;
+  padding: 10px;
+  background-color: #e0e0e0;
+  overflow-y: auto;
+  height: 100%;
+  position: fixed;
+  top: 0;
+}
+
+.sidebar h3, .sidebar h4, .sidebar h5 {
+  margin-top: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.sidebar button {
+  background-color: transparent;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.sidebar button:hover {
+  text-decoration: underline;
+}
+
+.sidebar button:focus {
+  outline: none;
+}
+
+.sidebar div {
+  margin-left: 10px;
+}
+
+.sidebar button {
+  margin: 5px 0;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  text-align: left;
+}
