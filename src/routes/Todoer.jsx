@@ -1,8 +1,8 @@
 import React from 'react';
 import { useLoaderData, Outlet, useParams} from 'react-router';
 import { fetchTodos } from '../utils/api';
-import Sidebar from '../components/Sidebar';
-import Dashboard from '../components/Dashboard';
+import Sidebar from '../components/sidebar';
+import Dashboard from '../components/dashboard';
 import "./todoer.css";
 
 // Loader to fetch todos

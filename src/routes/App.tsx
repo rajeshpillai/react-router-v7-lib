@@ -1,6 +1,8 @@
 import { useLoaderData } from "react-router";
+import { NavLink } from "react-router";
+
 import './App.css'
-import { Posts } from "../components/Post";
+import { Posts } from "../components/post";
 
 const BASE_URL = "https://jsonplaceholder.typicode.com/posts"
 
@@ -16,6 +18,9 @@ export default function App() {
   const posts = useLoaderData();
 
   console.log("POSTS: ", posts);
-  return <Posts data ={posts} />;
+  return <>
+  
+    <Posts data ={posts} />
+  </>
 }
 
